@@ -1,13 +1,21 @@
 <template>
-  <div><h1>Hello</h1></div>
+  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    {{ count }}
+    <button @click="increment()">
+      +
+    </button>
+  </div>
 </template>
 
-<script>
+<script setup>
+import {ref} from 'vue';
 
-export default {
-  name: "App",
-};
+const count = ref(0);
+
+function increment(){
+  count.value++;
+}
 </script>
 
-<style>
+<style scoped>
 </style>
